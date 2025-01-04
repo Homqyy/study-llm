@@ -1,2 +1,12 @@
 train.txt
 .ipynb_*
+.venv
+*.tar.gz
+
+# for datasets
+datasets
+.*temp
+.msc
+
+# for models
+models

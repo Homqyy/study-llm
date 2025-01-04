@@ -1,0 +1,13 @@
+{
+    "name": "study-llm",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+
+    "runArgs": [
+        // GPU support
+        "--gpus=all",
+        "--privileged=true"
+    ]
+}

@@ -4,6 +4,8 @@ OS: ubuntu22.04
 
 GPU: [GeForce RTX 4080 Super](https://www.techpowerup.com/gpu-specs/geforce-rtx-4080-super.c4182)
 
+Python: 3.10.12
+
 ## download model
 
 ### with huggingface-cli

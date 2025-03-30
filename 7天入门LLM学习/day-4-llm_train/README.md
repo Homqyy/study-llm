@@ -48,8 +48,24 @@
 
 分布式训练：
 
-- DDP：
-- MP
+- DDP：将训练集的数据分段拆分到不同的进程中，这种训练方式相当于增加了batchsize。比如四个进程，每个进程batchsize=1，则总体batch_size=4。在计算梯度时，torch框架会自动将四个进程的梯度进行累加平均。该方法会提高训练速度，但如果模型在单张显卡上显存溢出，DDP方式也无法运行
+- MP：模型并行
+  - tensor：将矩阵拆分到多张显卡上，比较著名的框架是Megatron
+  - ZeRO-1
+  - ZeRO-2
+  - ZeRO-3
+  - FSDP
+  - devicemap
+
+LoRA：
+
+- LoRA是一个非常重要的可调优结构，简单来说，就是增加了一个额外可训练部分，比如原来的Linear的矩阵是MxN维，增加一个LoRA，该LoRA会包含两个参数量较少的矩阵：Mxd, dxN，这两个矩阵相乘后仍然是MxN维的，训练时原MxN矩阵冻结，只训练LoRA的两个矩阵，参数量就会大大减少。
+
+训练框架：ms-swift
+
+- 安装：`pip install ms-swift -U`
+- 启动UI：`swift web-ui`
+- 项目：<https://github.com/modelscope/ms-swift>
 
 ## py-torch
 

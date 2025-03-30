@@ -1,0 +1,8 @@
+torch
+torchvision
+torchaudio
+ms-swift
+modelscope[framework]
+datasets
+transformers
+sentencepiece
